@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './navbar.scss'
+import { ItemListContainer } from './ItemListContainer';
 
 const pages = ['Inicio', 'Productos', 'Contacto'];
 const settings = ['Perfil', 'Cuenta', 'Cerrar sesión'];
@@ -135,6 +136,8 @@ const NavAppBar = () => {
               </Button>
             ))}
           </Box>
+
+          <ItemListContainer/>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

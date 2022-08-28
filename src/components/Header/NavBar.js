@@ -13,10 +13,11 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Badge } from "@mui/material";
+import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
 import './navbar.scss'
-import { ItemListContainer } from './ItemListContainer';
 
-const pages = ['Inicio', 'Productos', 'Contacto'];
+const pages = ['Inicio', 'productos', 'Contacto'];
 const settings = ['Perfil', 'Cuenta', 'Cerrar sesión'];
 
 const NavAppBar = () => {
@@ -137,7 +138,7 @@ const NavAppBar = () => {
             ))}
           </Box>
 
-          <ItemListContainer/>
+          <Button><Badge badgeContent={3}><LocalGroceryStoreRoundedIcon/></Badge></Button>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

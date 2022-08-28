@@ -1,0 +1,17 @@
+.produc{
+    text-align: center;
+    color: rgb(95, 0, 0);
+    animation-duration: 2s;
+    animation-name: aparecer;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+    @keyframes aparecer{
+        0%{
+            opacity: 0.35;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+}

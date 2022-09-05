@@ -1,0 +1,38 @@
+.card{
+
+    .title{
+        background-color: rgba(197, 196, 196, 0.877);
+        color: rgb(0, 0, 0);
+    }
+    
+    .producto{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .descripcion{
+        background-color: rgba(197, 196, 196, 0.877);
+    }
+    
+    .descrip{
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+    }
+
+    .box{
+        background-color: rgb(53, 53, 53);
+        text-align: center;
+    }
+
+    .vermas{
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(206, 206, 206);
+    &:hover{
+        background-color: rgba(255, 0, 0, 0.603);
+        border-radius: 5px;
+    }
+    }
+}
+

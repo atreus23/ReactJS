@@ -1,3 +1,16 @@
 .icono{
     padding-right: 20px;
 }
+.navbar{
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+.navbar1{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    &:hover{
+        background-color: rgba(197, 196, 196, 0.438);
+        color: white;
+        border-radius: 5px;
+    }
+}

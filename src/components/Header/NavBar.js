@@ -11,14 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Badge } from "@mui/material";
 import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
-import './navbar.scss'
-
-const pages = ['Inicio', 'productos', 'Contacto'];
-const settings = ['Perfil', 'Cuenta', 'Cerrar sesión'];
+import './navbar.scss';
+import { Link } from 'react-router-dom';
 
 const NavAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -53,23 +50,15 @@ const NavAppBar = () => {
     <AppBar position="static">
       <Container>
         <Toolbar disableGutters>
-          <LaptopMacIcon className='icono'/>
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
           >
-            INFORMÁTICA
+            <Link className='navbar' to='/'>INFORMÁTICA</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -81,7 +70,7 @@ const NavAppBar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+            <MenuIcon/>
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -101,45 +90,27 @@ const NavAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+                <MenuItem onClick={handleCloseNavMenu}><Link className='navbar1' to="/">Productos</Link></MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}><Link className='navbar1' to="/Nosotros">Nosotros</Link></MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}><Link className='navbar1' to="/Contacto">Contacto</Link></MenuItem>
             </Menu>
           </Box>
           <Typography
             variant="h7"
             noWrap
-            component="a"
-            href=""
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
           >
-            INFORMÁTICA
+          <Link className='navbar' to='/'>INFORMÁTICA</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+              <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/">Productos</Link></Button>
+              <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/Nosotros">Nosotros</Link></Button>
+              <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/Contacto">Contacto</Link></Button>
           </Box>
-
           <Button><Badge badgeContent={3}><LocalGroceryStoreRoundedIcon/></Badge></Button>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -162,11 +133,9 @@ const NavAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseUserMenu}><Typography>Iniciar</Typography></MenuItem>
+              <MenuItem onClick={handleCloseUserMenu}><Typography>Cuenta</Typography></MenuItem>
+              <MenuItem onClick={handleCloseUserMenu}><Typography>Cerrar sesión</Typography></MenuItem>
             </Menu>
           </Box>
         </Toolbar>

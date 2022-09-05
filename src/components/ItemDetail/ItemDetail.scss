@@ -1,0 +1,29 @@
+.boton{
+    
+    margin-left: calc(50% - 125px);
+
+    .negro{
+        background: rgba(7, 7, 7, 0.877) !important;
+    }
+    .azul{
+        background: rgba(5, 5, 184, 0.808)!important;
+    }
+    .rojo{
+        background: rgba(189, 0, 0, 0.945)!important;
+    } 
+}
+
+.detalles{
+    text-align: center;
+    padding-top: 50px;
+
+    .carousel{
+
+        width: 475px;
+        margin: auto;
+
+       .imagen{
+        width: 500px;
+        } 
+    }
+}

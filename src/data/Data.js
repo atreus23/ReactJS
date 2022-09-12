@@ -7,6 +7,23 @@ export const Productos = [
     Descripcion: 'I5 10400, RTX 1660 Super',
     Stock: 8,
     Categoria: 'Notebook',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 {
     Id: 2,
@@ -16,6 +33,23 @@ export const Productos = [
     Descripcion: 'I3 9400, GTX 1050 Ti',
     Stock: 12,
     Categoria: 'Notebook',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 {
     Id: 3,
@@ -25,6 +59,23 @@ export const Productos = [
     Descripcion: 'Iphone 13 Pro Max',
     Stock: 3,
     Categoria: 'Celular',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 {
     Id: 4,
@@ -34,6 +85,23 @@ export const Productos = [
     Descripcion: 'S22 Ultra',
     Stock: 7,
     Categoria: 'Celular',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 {
     Id: 5,
@@ -43,6 +111,23 @@ export const Productos = [
     Descripcion: 'Xperia',
     Stock: 11,
     Categoria: 'Celular',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 {
     Id: 6,
@@ -52,6 +137,23 @@ export const Productos = [
     Descripcion: 'Optimus M5',
     Stock: 9,
     Categoria: 'Tablet',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 {
     Id: 7,
@@ -61,5 +163,22 @@ export const Productos = [
     Descripcion: 'Androir 11',
     Stock: 15,
     Categoria: 'Tablet',
+    Colores: [
+        {
+            text: 'Colores'
+        },
+        {
+            value: 'Rojo',
+            text: 'Rojo'
+        },
+        {
+            value: 'Azul',
+            text: 'Azul'
+        },
+        {
+            value: 'Verde',
+            text: 'Verde'
+        }
+    ],
 },
 ]

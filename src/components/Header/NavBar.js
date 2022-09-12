@@ -16,8 +16,13 @@ import { Badge } from "@mui/material";
 import LocalGroceryStoreRoundedIcon from '@mui/icons-material/LocalGroceryStoreRounded';
 import './navbar.scss';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react'
+import { CartContext } from '../../Context/CartContext'
 
 const NavAppBar = () => {
+
+  const { cartQuantity } = useContext(CartContext)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -110,7 +115,7 @@ const NavAppBar = () => {
               <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/Nosotros">Nosotros</Link></Button>
               <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/Contacto">Contacto</Link></Button>
           </Box>
-          <Button><Badge badgeContent={3}><LocalGroceryStoreRoundedIcon/></Badge></Button>
+          <Button><Badge badgeContent={cartQuantity()}><Link to="/Cart"><LocalGroceryStoreRoundedIcon/></Link></Badge></Button>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

@@ -1,35 +1,8 @@
-import { useState, useEffect } from "react"
 import { Button } from '@mui/material'
 import './itemcount.scss'
 
-const ItemCount = ({Stock}) => {
+const ItemCount = ({handleRestar, contador, handleSumar, comprar, stock}) => {
 
-    const [contador, setContador] = useState(1)
-    const [stock, setStock] = useState()
-
-    useEffect(() => {
-        setStock(Stock)
-    },[Stock])
-    
-    const handleRestar = () => {
-        if (contador > 1) {
-        setContador(contador - 1)
-        }
-    }
-    const handleSumar = () => {
-        if (contador < stock) {
-        setContador(contador + 1)
-        }
-    }    
-    const comprar = () => {
-        if (contador >= 1 && contador <= stock){
-            setStock (stock - contador)
-            alert('Aregado al carrito')
-        }
-        else if (contador > stock){
-            alert('No hay Stock')
-        }
-    }
     return (
         <div className="contador">
             <Button onClick={handleRestar} variant="contained" color="error">-</Button>

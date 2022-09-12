@@ -4,12 +4,15 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
+import { CartProvider } from './Context/CartContext';
 
 function App() {
   return (
     <div>
-      
-      <BrowserRouter>
+      <CartProvider>
+
+        <BrowserRouter>
 
           <NavAppBar/>
           
@@ -19,11 +22,14 @@ function App() {
               <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
               <Route path="/Nosotros" element={<Nosotros/>}/>
               <Route path="/Contacto" element={<Contacto/>}/>
+              <Route path="/Cart" element={<Cart/>}/>
               <Route path='*' element={ <Navigate to="/"/>} />
           </Routes>
             
-      </BrowserRouter>
+        </BrowserRouter>
 
+      </CartProvider>
+      
     </div>
   );
 }

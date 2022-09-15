@@ -1,4 +1,5 @@
 import { useCartContext } from "../../Context/CartContext"
+import { BsFillTrash2Fill } from "react-icons/bs";
 
 const Cart = () => {
 
@@ -16,7 +17,7 @@ const Cart = () => {
                     <small>Color: {producto.color}</small>
                     <p>Precio: {producto.Precio}</p>
                     <p>Cantidad: {producto.contador}</p>
-                    <button onClick={() => removeItem(producto.Id)} className="btn btn-danger mx-2">s</button>
+                    <button onClick={() => removeItem(producto.Id)} className="btn btn-danger mx-2"><BsFillTrash2Fill/></button>
                     <hr/>
                 </div>
             ))}

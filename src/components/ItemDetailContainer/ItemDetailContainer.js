@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
-import { PedirDatos } from "../../data/PedirDatos"
 import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail"
+import app from '../../Firebase/config'
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
+
+const db = getFirestore(app)
 
 const ItemDetailContainer = () => {
 
@@ -11,13 +14,12 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-        PedirDatos()
-            .then((res) => {
-                setItem( res.find((prod) => prod.Id === Number(itemId)) )
+        const Documento = doc(db, 'productos', itemId) 
+        getDoc(Documento)
+            .then((doc) => {
+                setItem({Id: doc.id, ...doc.data()})
             })
-            .catch(err => console.log(err))
-            
-        }, [itemId])
+    }, [itemId])
 
     return (
             <ItemDetail item={item}/>

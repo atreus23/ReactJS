@@ -9,7 +9,6 @@ import { useState, useEffect } from "react"
 import { useCartContext } from '../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
-import Select from '../Select/Select';
 
 const buttons = [
         <Button className='negro' key="one">Negro</Button>,
@@ -22,7 +21,6 @@ const ItemDetail = ({item}) => {
     const { addToCart, isInCart } = useCartContext()
 
     const [contador, setContador] = useState(1)
-    const [color, setColor] = useState()
     const [stock, setStock] = useState()
 
     useEffect(() => {
@@ -56,7 +54,6 @@ const ItemDetail = ({item}) => {
                 Nombre: item.Nombre,
                 Descripcion: item.Descripcion,
                 contador,
-                color
             }
             
             addToCart(itemToCart)
@@ -90,7 +87,6 @@ const ItemDetail = ({item}) => {
             </Carousel>
             <p>{item.Descripcion}</p>
             <h4>${item.Precio}</h4>
-            <Select options={item.Colores} onSelect={setColor}/>
             <Box className='boton' sx={{display: 'flex', '& > *': {m: 1,},}}>
                   <ButtonGroup aria-label="outlined primary button group" variant="contained">{buttons}</ButtonGroup>
             </Box>

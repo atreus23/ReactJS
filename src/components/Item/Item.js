@@ -17,7 +17,7 @@ export default function Item({producto}) {
             <CardContent className='descripcion'>
                 <Typography className='descrip' variant="body2" color="text.secondary">{producto.Descripcion}</Typography>
             </CardContent>
-            <Box className='box'><Button><Link className='vermas' to={`/item/${producto.Id}`}>Ver más</Link></Button></Box>            
+            <Box className='box'><Button><Link className='vermas' to={`/item/${producto.id}`}>Ver más</Link></Button></Box>           
         </Card>
     );
 }

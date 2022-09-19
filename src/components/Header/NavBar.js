@@ -21,7 +21,7 @@ import { CartContext } from '../../Context/CartContext'
 
 const NavAppBar = () => {
 
-  const { cartQuantity } = useContext(CartContext)
+  const { cartQuantity, cart } = useContext(CartContext)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -115,7 +115,7 @@ const NavAppBar = () => {
               <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/Nosotros">Nosotros</Link></Button>
               <Button  onClick={handleCloseNavMenu} sx={{ my: 2 }}><Link className='navbar1' to="/Contacto">Contacto</Link></Button>
           </Box>
-          <Button><Badge badgeContent={cartQuantity()}><Link to="/Cart"><LocalGroceryStoreRoundedIcon/></Link></Badge></Button>
+          <Button className={cart.length === 0 ? 'carrito' : ''}><Badge badgeContent={cartQuantity()}><Link to="/Cart"><LocalGroceryStoreRoundedIcon/></Link></Badge></Button>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

@@ -1,5 +1,6 @@
 import { useCartContext } from "../../Context/CartContext"
 import { BsFillTrash2Fill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -14,7 +15,6 @@ const Cart = () => {
                 <div key={producto.Id}>
                     <h3>{producto.Nombre}</h3>
                     <p>{producto.Descripcion}</p>
-                    <small>Color: {producto.color}</small>
                     <p>Precio: {producto.Precio}</p>
                     <p>Cantidad: {producto.contador}</p>
                     <button onClick={() => removeItem(producto.Id)} className="btn btn-danger mx-2"><BsFillTrash2Fill/></button>
@@ -22,9 +22,14 @@ const Cart = () => {
                 </div>
             ))}
 
-
-            <h4>Total: ${cartTotal()}</h4>
-            <button onClick={emptyCart} className="btn btn-danger">Vaciar carrito</button>
+            {
+                cart.length === 0 ? <><h4>Carrito vacio</h4><Link to='/'>Volver a tienda</Link></>
+                : <>
+                    <h4>Total: ${cartTotal()}</h4>
+                    <button onClick={emptyCart} className="btn btn-danger">Vaciar carrito</button>
+                  </>
+            }
+  
         </div>
     )
 }

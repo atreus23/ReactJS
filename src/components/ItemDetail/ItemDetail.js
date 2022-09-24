@@ -3,18 +3,10 @@ import './ItemDetail.scss'
 import Carousel from 'react-bootstrap/Carousel';
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Box from '@mui/material/Box';
 import { useState, useEffect } from "react"
 import { useCartContext } from '../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
-
-const buttons = [
-        <Button className='negro' key="one">Negro</Button>,
-        <Button className='azul' key="two">Azul</Button>,
-        <Button className='rojo' key="three">Rojo</Button>,
-];
 
 const ItemDetail = ({item}) => {
 
@@ -87,16 +79,11 @@ const ItemDetail = ({item}) => {
             </Carousel>
             <p>{item.Descripcion}</p>
             <h4>${item.Precio}</h4>
-            <Box className='boton' sx={{display: 'flex', '& > *': {m: 1,},}}>
-                  <ButtonGroup aria-label="outlined primary button group" variant="contained">{buttons}</ButtonGroup>
-            </Box>
-
             {
                 isInCart(item.Id)
-                ?   <><Button variant="contained" color="success"><Link className='compra' to="/">Seguir navegando</Link></Button><Button variant="contained" color="error"><Link className='compra' to="/Cart">Terminar compra</Link></Button></>
+                ?   <><Button variant="contained" color="success"><Link className='compra' to="/">Seguir navegando</Link></Button><Button variant="contained" color="error" className='mx-3'><Link className='compra' to="/Cart">Terminar compra</Link></Button></>
                 :   <ItemCount handleRestar={handleRestar} contador={contador} handleSumar={handleSumar} comprar={comprar} stock={stock}/>
             }
-
         </div>
     )
 }

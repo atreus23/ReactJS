@@ -5,9 +5,9 @@ const ItemCount = ({handleRestar, contador, handleSumar, comprar, stock}) => {
 
     return (
         <div className="contador">
-            <Button onClick={handleRestar} variant="contained" color="error">-</Button>
+            <Button onClick={handleRestar} className="boton" color="error">-</Button>
             <span className="cantidad">Cantidad: {contador}</span>
-            <Button onClick={handleSumar} variant="contained" color="success">+</Button>
+            <Button onClick={handleSumar} className="boton" color="success">+</Button>
             <br/>
             <p>Stock: {stock}</p>
             <Button onClick={comprar} variant="contained" color="primary">Agregar al carrito</Button>

@@ -44,6 +44,17 @@ export const CartProvider = ({children}) => {
           })
     }
 
+    const terminarCompraConSwal = (id) => {
+      Swal.fire({
+        title: 'Compra exitosa!',
+        text: `Tu número de orden es: ${id}`,
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Continuar'
+      })
+      setCart([])
+    }
+
     return (
         <CartContext.Provider value={{
             cart,
@@ -52,7 +63,8 @@ export const CartProvider = ({children}) => {
             cartQuantity,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            terminarCompraConSwal
           }}>
             {children}
         </CartContext.Provider>

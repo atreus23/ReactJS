@@ -1,10 +1,14 @@
 import { useCartContext } from "../../Context/CartContext"
 import { BsFillTrash2Fill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Cart = () => {
 
     const { cart, cartTotal, emptyCart, removeItem } = useCartContext()
+    
+    if (cart.length === 0) {
+        return <Navigate to="/"/>
+    }
 
     return (
         <div className="container my-5">
@@ -23,11 +27,11 @@ const Cart = () => {
             ))}
 
             {
-                cart.length === 0 ? <><h4>Carrito vacio</h4><Link to='/'>Volver a tienda</Link></>
-                : <>
+                <>
                     <h4>Total: ${cartTotal()}</h4>
                     <button onClick={emptyCart} className="btn btn-danger">Vaciar carrito</button>
-                  </>
+                    <button className="btn btn-primary mx-3"><Link to="/Pagar" className="navbar1">Pagar</Link></button>
+                </>
             }
   
         </div>
